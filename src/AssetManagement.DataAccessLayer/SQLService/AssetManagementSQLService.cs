@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AssetManagement.DataAccessLayer
+namespace AssetManagement.DataAccessLayer.SQLService
 {
-    public class AssetManagementDBService : IAssetManagementDBService
+    public class AssetManagementSQLService : IAssetManagementSQLService
     {
         private readonly AssetManagementDBContext _assetManagementDBContext;
 
-        public AssetManagementDBService(AssetManagementDBContext assetManagementDBContext)
+        public AssetManagementSQLService(AssetManagementDBContext assetManagementDBContext)
         {
             _assetManagementDBContext = assetManagementDBContext;
         }

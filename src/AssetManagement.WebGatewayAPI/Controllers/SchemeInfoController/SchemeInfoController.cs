@@ -1,4 +1,4 @@
-﻿using AssetManagement.DataAccessLayer;
+﻿using AssetManagement.DataAccessLayer.SQLService;
 using AssetManagement.WebGatewayAPI.ControllerServices.SchemeInfoControllerService;
 using AssetManagement.WebGatewayAPI.Services.RapidAPIService;
 using Microsoft.AspNetCore.Http;
@@ -13,12 +13,12 @@ namespace AssetManagement.WebGatewayAPI.Controllers.SchemeInfoController
     [ApiController]
     public class SchemeInfoController : Controller
     {
-        private readonly IAssetManagementDBService _assetManagementDBService;
+        private readonly IAssetManagementSQLService _assetManagementDBService;
         private readonly IRapidAPIService _rapidAPIService;
         private readonly ISchemeInfoControllerService _schemeInfoControllerService;
 
         public SchemeInfoController(
-            IAssetManagementDBService assetManagementDBService,
+            IAssetManagementSQLService assetManagementDBService,
             IRapidAPIService rapidAPIService,
             ISchemeInfoControllerService schemeInfoControllerService)
         {

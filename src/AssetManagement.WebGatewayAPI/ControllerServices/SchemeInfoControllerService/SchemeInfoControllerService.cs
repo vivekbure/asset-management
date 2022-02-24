@@ -1,5 +1,5 @@
-﻿using AssetManagement.DataAccessLayer;
-using AssetManagement.DataAccessLayer.Models;
+﻿using AssetManagement.DataAccessLayer.Models;
+using AssetManagement.DataAccessLayer.SQLService;
 using AssetManagement.WebGatewayAPI.Services.RapidAPIService;
 using System;
 using System.Linq;
@@ -10,11 +10,11 @@ namespace AssetManagement.WebGatewayAPI.ControllerServices.SchemeInfoControllerS
     public class SchemeInfoControllerService : ISchemeInfoControllerService
     {
         private readonly IRapidAPIService _rapidAPIService;
-        private readonly IAssetManagementDBService _assetManagementDBService;
+        private readonly IAssetManagementSQLService _assetManagementDBService;
 
         public SchemeInfoControllerService(
             IRapidAPIService rapidAPIService,
-            IAssetManagementDBService assetManagementDBService)
+            IAssetManagementSQLService assetManagementDBService)
         {
             _rapidAPIService = rapidAPIService;
             _assetManagementDBService = assetManagementDBService;

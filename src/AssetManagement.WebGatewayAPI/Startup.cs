@@ -1,5 +1,6 @@
-using AssetManagement.DataAccessLayer;
 using AssetManagement.DataAccessLayer.Models;
+using AssetManagement.DataAccessLayer.RedisDBService;
+using AssetManagement.DataAccessLayer.SQLService;
 using AssetManagement.WebGatewayAPI.Controllers.SchemeInfoController;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,11 +31,12 @@ namespace AssetManagement.WebGatewayAPI
             });
 
             // Dependency Injections
-            services.AddSingleton<IAssetManagementDBService, AssetManagementDBService>();
+            services.AddSingleton<IAssetManagementSQLService, AssetManagementSQLService>();
 
             services.AddTransient<AssetManagementDBContext>();
 
             services.AddSchemeInfoServices();
+            services.AddRedisServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

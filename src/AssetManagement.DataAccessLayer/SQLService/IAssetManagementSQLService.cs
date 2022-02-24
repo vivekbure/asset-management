@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AssetManagement.DataAccessLayer
+namespace AssetManagement.DataAccessLayer.SQLService
 {
-    public interface IAssetManagementDBService
+    public interface IAssetManagementSQLService
     {
         bool UpdateSchemes(List<SchemeInfo> schemeInfos);
 
